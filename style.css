@@ -71,11 +71,11 @@ button:hover {
 
 .matrix {
     display: grid;
-    grid-template-columns: repeat(${size}, 65px); /* Adjust for matrix size */
+    grid-template-columns: repeat(4, 65px); /* Adjust for matrix size (default 4x4) */
     gap: 10px; /* Space between cells in the matrix */
     padding: 10px; /* Padding around each matrix */
     background-color: #f0f4c3; /* Light color for the matrix background */
-    border:2px solid #00796b; /* Border around the matrix */
+    border: 2px solid #00796b; /* Border around the matrix */
     border-radius: 10px; /* Rounded corners for a softer look */
     text-align: center; /* Center align text in matrix */
 }
@@ -86,3 +86,4 @@ button:hover {
     margin-bottom: 10px; /* Space between label and matrix */
     grid-column: span 4; /* Make label span across all 4 columns */
 }
+
