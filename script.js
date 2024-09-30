@@ -20,7 +20,7 @@ function toKannada(num) {
 // Function to create a puzzle of a specific size
 function createPuzzle() {
     size = parseInt(document.getElementById('gridSize').value);
-    puzzleGrid.style.gridTemplateColumns = repeat(${size}, 65px); // Adjust the grid layout based on size
+    puzzleGrid.style.gridTemplateColumns = `repeat(${size}, 65px)`; // Use correct template literal syntax
 
     // Generate the ordered puzzle (1 to size^2 - 1 with one blank)
     puzzle = Array.from({ length: size * size - 1 }, (_, i) => i + 1);
@@ -80,7 +80,7 @@ function solvePuzzle() {
 
     if (solution.length > 0) {
         const numberOfMoves = solution.length - 1; // Exclude the initial state
-        alert(Puzzle solved in ${numberOfMoves} moves.);
+        alert(`Puzzle solved in ${numberOfMoves} moves.`);
         animateSolution(solution);
 
         // Display solution steps as matrices
@@ -96,11 +96,11 @@ function displaySolutionMatrices(solution) {
     solution.forEach((step, index) => {
         const matrixDiv = document.createElement('div');
         matrixDiv.classList.add('matrix');
-        matrixDiv.style.gridTemplateColumns = repeat(${size}, 65px); // Set columns based on size
+        matrixDiv.style.gridTemplateColumns = `repeat(${size}, 65px)`; // Set columns based on size
 
         const stepLabel = document.createElement('div');
         stepLabel.classList.add('stepLabel');
-        stepLabel.textContent = Step ${index}; // Start labeling from Step 0
+        stepLabel.textContent = `Step ${index}`; // Start labeling from Step 0
         solutionContainer.appendChild(stepLabel); // Add label outside the matrix
 
         step.forEach((number) => {
